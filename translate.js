@@ -17,15 +17,19 @@ const translations = {
     },
     "I agree": {
         "ES": "Estoy de acuerdo",
-        "ID": "SAYA SETUJU"
+        "ID": "Saya setuju"
+    },
+    "MORE": {
+        "ES": "MAS",
+        "ID": "LAINNYA"
     },
     "ACCEPT": {
         "ES": "ACEPTAR",
-        "ID": "LAINNYA"
-    },
-    "AGREE": {
-        "ES": "ACEPTAR",
         "ID": "SETUJU"
+    },
+    "Not now": {
+        "ES": "Ahora no",
+        "ID": "Jangan sekarang"
     }
     // 添加更多翻译...
 };
