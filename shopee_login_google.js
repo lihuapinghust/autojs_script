@@ -79,10 +79,10 @@ function waitUntilWelcomePage(country) {
  * @param {string} country - The country code of the Shopee account.
  * @return {boolean} Returns true if login is successful, false otherwise.
  */
-function shopeeLogin(country) {
-    if (country == null || country == "") {
-        return false;
-    }
+function shopeeLogin() {
+    importClass(java.util.Locale);
+    var locale = Locale.getDefault();
+    var country = locale.getCountry();
 
     if (!waitUntilShopeeLogin(country)) {
         toastLog("waitUntilShopeeLogin failed");
@@ -204,7 +204,7 @@ function shopeeLogin(country) {
 //     shopeeLogin: shopeeLogin
 // };
 
-if (shopeeLogin("ID")) {
+if (shopeeLogin()) {
     toast("Login success");
 } else {
     toast("Login failed");
