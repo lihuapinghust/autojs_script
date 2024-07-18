@@ -21,9 +21,9 @@ function getEmailAccount(country) {
     }
 
     var date = new Date();
-    date.setDate(date.getDate());
+    date.setDate(date.getDate() - 7);
     var oneWeekAgo = getFormattedDate(date);
-    var url = "https://aadmin.focuslife.today/api/email-accounts?used=0&registered=0&limit=1&created_at<=" + oneWeekAgo;
+    var url = "https://aadmin.focuslife.today/api/email-accounts?used=0&registered=0&limit=1&order_by=created_at,asc&created_at<=" + oneWeekAgo;
     var resp = http.get(url);
     if (resp.statusCode == 200) {
         var emailAccounts = resp.body.json();
