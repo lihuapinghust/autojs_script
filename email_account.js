@@ -29,13 +29,10 @@ function getEmailAccount(country) {
         var emailAccounts = resp.body.json();
         for (let index = 0; index < emailAccounts.length; index++) {
             const element = emailAccounts[index];
-
-            result = {
+            return {
                 email: element.email,
                 password: element.password
-            }
-            markAsUsed(result);
-            return result;
+            };
         }
     } else {
         toastLog("Error: " + resp.statusCode);
