@@ -124,6 +124,7 @@ function shopeeLogin() {
     var emailLabel = className("android.widget.TextView").text(emailAccount.email).findOne(GLOBAL_TIMEOUT);
     if (emailLabel == null) {
         toastLog("emailLabel is null");
+        ea.markAsUnused(emailAccount);
         return false;
     }
 
@@ -197,6 +198,7 @@ function shopeeLogin() {
         return true;
     }
 
+    ea.markAsUnused(emailAccount);
     return false;
 }
 

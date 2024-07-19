@@ -23,7 +23,7 @@ function getEmailAccount(country) {
     var date = new Date();
     date.setDate(date.getDate() - 7);
     var oneWeekAgo = getFormattedDate(date);
-    var url = "https://aadmin.focuslife.today/api/email-accounts?used=0&registered=0&limit=1&order_by=created_at,asc&created_at<=" + oneWeekAgo;
+    var url = "https://aadmin.focuslife.today/api/email-accounts?used=0&registered=0&limit=1&last_click_id!=risked&last_click_id!=disabled&order_by=created_at,asc&created_at<=" + oneWeekAgo;
     var resp = http.get(url);
     if (resp.statusCode == 200) {
         var emailAccounts = resp.body.json();
@@ -47,14 +47,14 @@ function getEmailAccount(country) {
  * @param {Object} emailAccount - The email account object containing the email and password.
  * @return {boolean} Returns true if the email account was marked as used successfully, false otherwise.
  */
-function markAsUsed(emailAccount) {
+function markAsUnused(emailAccount) {
     if (emailAccount == null) {
         return false;
     }
 
     var url = "https://aadmin.focuslife.today/api/email-accounts?email=" + emailAccount.email;
     var data = {
-        used: 1
+        used: 0
     };
 
     var jsonData = JSON.stringify(data);
