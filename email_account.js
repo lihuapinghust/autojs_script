@@ -142,7 +142,7 @@ function markAsRisked(emailAccount) {
 
 module.exports = {
     getEmailAccount: getEmailAccount,
-    markAsUsed: markAsUsed,
+    markAsUnused: markAsUnused,
     markAsRegistered: markAsRegistered,
     markAsRisked: markAsRisked
 };
