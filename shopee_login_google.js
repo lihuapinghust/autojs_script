@@ -1,4 +1,4 @@
-const translate = require('./translate.js');
+const translate = require('/sdcard/Download/autojs_script/translate.js');
 
 const GLOBAL_TIMEOUT = 10000;
 
@@ -10,7 +10,7 @@ function waitUntilShopeeLogin(country) {
         count += 1;
         sleep(1000);
         var login_img = captureScreen();
-        var google_logo_img = images.read("/sdcard/Download/google_logo.png");
+        var google_logo_img = images.read("/sdcard/Download/autojs_script/google_logo.png");
         var pos = findImage(login_img, google_logo_img);
         if (pos) {
             click(pos.x, pos.y);
@@ -28,7 +28,7 @@ function waitUntilGoogleLogin(country) {
         count += 1;
         sleep(1000);
         var login_img = captureScreen();
-        var google_logo_img = images.read("/sdcard/Download/google_text.png");
+        var google_logo_img = images.read("/sdcard/Download/autojs_script/google_text.png");
         var pos = findImage(login_img, google_logo_img);
         if (pos) {
             return true;
@@ -45,7 +45,7 @@ function waitUntilMainPage(country) {
         count += 1;
         sleep(1000);
         var login_img = captureScreen();
-        var main_page_img = images.read("/sdcard/Download/main_page_video.png");
+        var main_page_img = images.read("/sdcard/Download/autojs_script/main_page_video.png");
         var pos = findImage(login_img, main_page_img);
         if (pos) {
             click(pos.x, pos.y);
@@ -63,7 +63,7 @@ function waitUntilWelcomePage(country) {
         count += 1;
         sleep(1000);
         var login_img = captureScreen();
-        var welcome_page_img = images.read("/sdcard/Download/welcome.png");
+        var welcome_page_img = images.read("/sdcard/Download/autojs_script/welcome.png");
         var pos = findImage(login_img, welcome_page_img);
         if (pos) {
             click(pos.x, pos.y);
@@ -96,7 +96,7 @@ function shopeeLogin() {
     
 
     // Get email account
-    var ea = require("email_account.js");
+    var ea = require("/sdcard/Download/autojs_script/email_account.js");
     var emailAccount = ea.getEmailAccount(country);
     if (emailAccount == null) {
         toastLog("emailAccount is null");
