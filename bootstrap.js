@@ -1,18 +1,9 @@
 function downloadFile(url, path) {
-    http.get(url, {}, function(res, err) {
-        if (err) {
-            console.error('无法下载文件: ' + err.message);
-            return;
-        }
-
-        // 创建文件对象，并写入内容
-        let file = files.createWithDirs(path);
-        file.writeBytes(res.body.bytes());
-
-        console.log('文件已成功保存到: ' + path);
-    });
+    var res = http.get(url);
+    let file = files.createWithDirs(path);
+    file.writeBytes(res.body.bytes());
+    console.log('文件已成功保存到: ' + path);
 }
-
 
 const repoOwner = 'lihuapinghust';
 const repoName = 'autojs_script';
