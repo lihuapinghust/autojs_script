@@ -202,12 +202,12 @@ function shopeeLogin() {
     return false;
 }
 
-// module.exports = {
-//     shopeeLogin: shopeeLogin
-// };
+module.exports = {
+    shopeeLogin: shopeeLogin
+};
 
-if (shopeeLogin()) {
-    toast("Login success");
-} else {
-    toast("Login failed");
-}
+// if (shopeeLogin()) {
+//     toast("Login success");
+// } else {
+//     toast("Login failed");
+// }
