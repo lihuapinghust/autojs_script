@@ -8,10 +8,9 @@ function downloadFile(url, path) {
 const repoOwner = 'lihuapinghust';
 const repoName = 'autojs_script';
 
-// 获取文件列表的URL
-const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents`;
+files.removeDir(`/sdcard/Download/${repoName}`);
 
-// 发送HTTP请求获取文件列表
+const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents`;
 var res = http.get(apiUrl);
 const file_list = JSON.parse(res.body.string());
 file_list.forEach(function(file) {
