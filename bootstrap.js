@@ -1,7 +1,7 @@
 function downloadFile(url, path) {
     var res = http.get(url);
-    let file = files.createWithDirs(path);
-    file.writeBytes(res.body.bytes());
+    files.createWithDirs(path);
+    files.writeBytes(path, res.body.bytes());
     console.log('文件已成功保存到: ' + path);
 }
 
