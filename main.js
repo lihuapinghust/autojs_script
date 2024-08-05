@@ -190,6 +190,8 @@ if (continueBtn) {
 sleep(6000)
 swipe(540, 1800, 540, 400, 1000)
 sleep(5000)
+swipe(540, 1800, 540, 400, 1000)
+sleep(5000)
 click(750, 2100)
 sleep(5000)
 // var allowBtn = id("submit_approve_access").findOne(GLOBAL_TIMEOUT)
