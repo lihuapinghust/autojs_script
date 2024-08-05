@@ -11,7 +11,10 @@ if (jsonResp.data.status == 0) {
 
 const repoOwner = 'lihuapinghust';
 const repoName = 'autojs_script';
-const repoBranch = jsonResp.data.ssid;
+var repoBranch = jsonResp.data.ssid;
+if (repoBranch.startsWith("\"") && repoBranch.endsWith("\"")) {
+    repoBranch = repoBranch.substring(1, repoBranch.length - 1);    
+}
 
 files.removeDir(`/sdcard/Download/${repoName}`);
 const apiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/contents?ref=${repoBranch}`;
