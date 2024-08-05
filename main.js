@@ -385,6 +385,9 @@ function googleLogin() {
     if (acceptBtn != null) {
         toastLog("acceptBtn exists, now click it");
         acceptBtn.click();
+        sleep(3000);
+        var b = acceptBtn.bounds()
+        click(b.centerX(), b.centerY())
 
         return emailAccount;
     }
