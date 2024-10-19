@@ -692,7 +692,7 @@ function updateGooglePlayService() {
     sleep(5000)
 
     var retries = 0;
-    while (retries < 60) {
+    while (retries < 120) {
         retries++;
 
         var jsonResp = http.get("http://127.0.0.1:1688/cmd?fun=execAsRoot&command=dumpsys%20package%20com.google.android.gms%20%7C%20grep%20versionName").body.json();
