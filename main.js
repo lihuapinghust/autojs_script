@@ -38,7 +38,7 @@ if (res.code == 0) {
 sleep(2000)
 
 // Refresh ip
-jsonResp = http.get("http://97.64.22.36:8000/refresh_ip?country_code=US").body.json()
+jsonResp = http.get("http://97.64.30.72:8000/refresh_ip?country_code=US").body.json()
 if (jsonResp.new_ip != null) {
     toastLog("Refresh ip success. new ip: " + jsonResp.new_ip)
 } else {
@@ -437,7 +437,7 @@ function getEmailAccount(country) {
     var date = new Date();
     date.setDate(date.getDate() - 7);
     var oneWeekAgo = getFormattedDate(date);
-    var url = "https://aadmin.focuslife.today/api/email-accounts?id>" + lastId + "&limit=1&last_click_id!=risked&last_click_id!=disabled&order_by=created_at,asc";
+    var url = "https://aadmin.focuslife.today/api/email-accounts?id>" + lastId + "&used=0&limit=1&last_click_id!=risked&last_click_id!=disabled&order_by=created_at,asc";
     var resp = http.get(url);
     if (resp.statusCode == 200) {
         var emailAccounts = resp.body.json();

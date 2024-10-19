@@ -30,7 +30,7 @@ rules:
   - DOMAIN-SUFFIX,amazon.com,DIRECT
   - DOMAIN-SUFFIX,amazon.co.jp,DIRECT
   - DOMAIN-KEYWORD,aws,DIRECT
-  - IP-CIDR,97.64.22.36/32,DIRECT
+  - IP-CIDR,97.64.30.72/32,DIRECT
   - MATCH,Proxy
 `
 
