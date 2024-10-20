@@ -679,7 +679,7 @@ function updateGooglePlayService() {
     if (signInBtn) {
         toastLog("signInBtn exists, click it")
         signInBtn.click()
-        sleep(10000)
+        sleep(30000)
 
         http.get("http://127.0.0.1:1688/cmd?fun=execAsRoot&command=am%20force-stop%20com.android.vending")
         launch("com.android.vending")
