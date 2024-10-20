@@ -675,6 +675,17 @@ function updateGooglePlayService() {
     launch("com.android.vending")
     sleep(3000)
 
+    var signInBtn = id("0_resource_name_obfuscated").className("android.widget.Button").text("Sign in").findOne(GLOBAL_TIMEOUT)
+    if (signInBtn) {
+        toastLog("signInBtn exists, click it")
+        signInBtn.click()
+        sleep(10000)
+
+        http.get("http://127.0.0.1:1688/cmd?fun=execAsRoot&command=am%20force-stop%20com.android.vending")
+        launch("com.android.vending")
+        sleep(3000)
+    }
+
     // click Cancel Update
     click(230, 2150)
     sleep(1000)
